@@ -23,21 +23,17 @@ void selection_sort(int *array, size_t size)
 				min_index = j;
 				sortflag = 0;
 			/* finds minimum element in unsorted part */
+			}
 		}
-	}
-
-	if (sortflag)
-	{
-		break;
-	}
-
-		temp = array[i];
-		array[i] = array[min_index];
-		array[min_index] = temp;
-		/* swaps found min element with first element */
-
-		for (j = 0; j < size - 1; j++)
-			printf("%d, ", array[j]);
-		printf("%d\n", array[size - 1]);
+		
+		if (!sortflag)
+		{
+			temp = array[i];
+			array[i] = array[min_index];
+			array[min_index] = temp;
+			/* swaps found min element with first element */
+			
+			print_array(array, size);
+		}
 	}
 }
