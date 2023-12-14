@@ -25,14 +25,14 @@ void selection_sort(int *array, size_t size)
 			/* finds minimum element in unsorted part */
 			}
 		}
-		
+
 		if (!sortflag)
 		{
 			temp = array[i];
 			array[i] = array[min_index];
 			array[min_index] = temp;
 			/* swaps found min element with first element */
-			
+
 			print_array(array, size);
 		}
 	}
