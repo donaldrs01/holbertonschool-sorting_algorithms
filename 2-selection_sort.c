@@ -27,7 +27,9 @@ void selection_sort(int *array, size_t size)
 	}
 
 	if (sortflag)
+	{
 		break;
+	}
 
 		temp = array[i];
 		array[i] = array[min_index];
