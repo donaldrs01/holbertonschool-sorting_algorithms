@@ -12,19 +12,21 @@ void insertion_sort_list(listint_t **list)
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	current = (*list)->next;
+	current = (*list)->next; /* current points to 2nd node */
 
 	while (current != NULL)
 	{
-		prev = current->prev;
-		temp = NULL;
+		prev = current->prev; /* prev node before current */
+		temp = NULL; /* temp pointer for swapping nodes */
 
+		/* iterate through sorted part to find correct position */
 		while (prev != NULL && prev->n > current->n)
 		{
 			temp = prev->prev;
+			/* temp keeps track of node before prev */
 
 			if (temp != NULL)
-				temp->next = current;
+				temp->next = current; /* node swap */
 			else
 				*list = current;
 
