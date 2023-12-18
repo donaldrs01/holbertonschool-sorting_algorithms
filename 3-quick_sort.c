@@ -9,15 +9,15 @@
  */
 void swap(int *array, int i, int j, size_t size)
 {
-        int temp;
+	int temp;
 
-        if (array[i] != array[j])
-        {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-                print_array(array, size);
-        }
+	if (array[i] != array[j])
+	{
+		temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+		print_array(array, size);
+	}
 }
 /**
  * lomuto - function to partition array into small/large
@@ -31,21 +31,21 @@ void swap(int *array, int i, int j, size_t size)
 
 int lomuto(int *array, int low, int high, size_t size)
 {
-        int pivot = array[high];
-        int i = low;
-        int j;
+	int pivot = array[high];
+	int i = low;
+	int j;
 
-        for (j = low; j <= high - 1; j++)
-        {
-                if (array[j] <= pivot)
-                {
-                        swap(array, i, j, size);
-                        i++;
-                }
-        }
+	for (j = low; j <= high - 1; j++)
+	{
+		if (array[j] <= pivot)
+		{
+			swap(array, i, j, size);
+			i++;
+		}
+	}
 
-        swap(array, i, high, size);
-        return (i);
+	swap(array, i, high, size);
+	return (i);
 }
 /**
  * quick_sort_help - performs quicksort on array
@@ -57,15 +57,15 @@ int lomuto(int *array, int low, int high, size_t size)
 
 void quick_sort_help(int *array, int low, int high, size_t size)
 {
-        int pivot;
+	int pivot;
 
-        if (low >= high)
-        {
-                return;
-        }
-        pivot = lomuto(array, low, high, size);
-        quick_sort_help(array, low, pivot - 1, size);
-        quick_sort_help(array, pivot +1, high, size);
+	if (low >= high)
+	{
+		return;
+	}
+	pivot = lomuto(array, low, high, size);
+	quick_sort_help(array, low, pivot - 1, size);
+	quick_sort_help(array, pivot + 1, high, size);
 }
 
 /**
