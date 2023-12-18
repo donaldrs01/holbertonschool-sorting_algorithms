@@ -15,7 +15,7 @@ void swap(int *array, int i, int j, size_t size)
 	{
 		temp = array[i];
 		array[i] = array[j];
-		array[j] = tmp;
+		array[j] = temp;
 		print_array(array, size);
 	}
 }
