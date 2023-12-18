@@ -48,7 +48,7 @@ int lomuto(int *array, int low, int high, size_t size)
         return (i);
 }
 /**
- * quick_sort_help: performs quicksort on array
+ * quick_sort_help - performs quicksort on array
  * @array: array of integers
  * @low: index of low number
  * @high: index of high number
